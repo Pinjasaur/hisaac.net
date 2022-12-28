@@ -1,0 +1,19 @@
+root = true
+
+[*]
+end_of_line = lf
+insert_final_newline = true
+trim_trailing_whitespace = true
+
+# Prefer tab indentation for all files
+indent_style = tab
+
+# YAML prefers 2-space indents
+[*.{yml,yaml}]
+indent_style = space
+indent_size = 2
+
+# Python requires 4-space indents
+[*.py]
+indent_style = space
+indent_size = 4
