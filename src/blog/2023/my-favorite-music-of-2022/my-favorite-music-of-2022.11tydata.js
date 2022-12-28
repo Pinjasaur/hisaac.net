@@ -8,6 +8,7 @@ module.exports = {
 			links: {},
 			title: "Masters of Morbidity",
 			type: "single",
+			artwork: "200-stab-wounds-masters-of-morbidity.jpg",
 		},
 		{
 			artist: "A$AP Ant",
@@ -17,6 +18,7 @@ module.exports = {
 			links: {},
 			title: "Lil Black Jean Jacket 3",
 			type: "album",
+			artwork: "a$ap-ant-lil-black-jean-jacket-3.jpg",
 		},
 		{
 			artist: "Armani Caesar",
@@ -26,6 +28,7 @@ module.exports = {
 			links: {},
 			title: "THE LIZ 2",
 			type: "album",
+			artwork: "armani-caesar-the-liz-2.jpg",
 		},
 		{
 			artist: "BbyMutha",
@@ -35,6 +38,7 @@ module.exports = {
 			links: {},
 			title: "MUTHALEFIC3NT",
 			type: "album",
+			artwork: "bbymutha-muthalefic3nt.jpg",
 		},
 		{
 			artist: "Bedlocked",
@@ -44,6 +48,7 @@ module.exports = {
 			links: {},
 			title: "Bedlocked",
 			type: "album",
+			artwork: "bedlocked-bedlocked.jpg",
 		},
 		{
 			artist: "Big Thief",
@@ -53,6 +58,9 @@ module.exports = {
 			links: {},
 			title: "Dragon New Warm Mountain I Believe in You",
 			type: "album",
+			artwork: "big-thief-dragon-new-warm-mountain-i-believe-in-you.png",
+			animatedArtwork:
+				"big-thief-dragon-new-warm-mountain-i-believe-in-you.mp4",
 		},
 		{
 			artist: "Caroline Polachek",
@@ -62,6 +70,7 @@ module.exports = {
 			links: {},
 			title: "Billions",
 			type: "single",
+			artwork: "caroline-polachek-billions.jpg",
 		},
 		{
 			artist: "Caroline Polachek",
@@ -71,6 +80,7 @@ module.exports = {
 			links: {},
 			title: "Sunset",
 			type: "single",
+			artwork: "caroline-polachek-sunset.jpg",
 		},
 		{
 			artist: "Carpet City",
@@ -80,6 +90,7 @@ module.exports = {
 			links: {},
 			title: "Magic Tricks",
 			type: "single",
+			artwork: "carpet-city-magic-tricks.jpg",
 		},
 		{
 			artist: "Chained to the Bottom of the Ocean",
@@ -89,6 +100,7 @@ module.exports = {
 			links: {},
 			title: "I Tried Catching You But You Fell Through Me",
 			type: "album",
+			artwork: "chained-to-the-bottom-of-the-ocean-i-tried-catching-you-but-you-fell-through-me.jpg",
 		},
 		{
 			artist: "Chat Pile",
@@ -98,6 +110,7 @@ module.exports = {
 			links: {},
 			title: "God's Country",
 			type: "album",
+			artwork: "chat-pile-god's-country.jpg",
 		},
 		{
 			artist: "Chris Staples",
@@ -107,6 +120,7 @@ module.exports = {
 			links: {},
 			title: "Artifact",
 			type: "album",
+			artwork: "chris-staples-artifact.jpg",
 		},
 		{
 			artist: "Chris Staples",
@@ -116,6 +130,7 @@ module.exports = {
 			links: {},
 			title: "Out of My Body",
 			type: "single",
+			artwork: "chris-staples-out-of-my-body.jpg",
 		},
 		{
 			artist: "Chris Stapleton",
@@ -125,6 +140,7 @@ module.exports = {
 			links: {},
 			title: "I'm a Ram",
 			type: "single",
+			artwork: "chris-stapleton-i'm-a-ram.jpg",
 		},
 		{
 			artist: "Clark",
@@ -134,6 +150,7 @@ module.exports = {
 			links: {},
 			title: "05-10",
 			type: "album",
+			artwork: "clark-05-10.jpg",
 		},
 		{
 			artist: "Clark",
@@ -143,6 +160,7 @@ module.exports = {
 			links: {},
 			title: "Body Riddle (2022 Remaster)",
 			type: "album",
+			artwork: "clark-body-riddle-2022-remaster.jpg",
 		},
 		{
 			artist: "Cloakroom",
@@ -152,6 +170,7 @@ module.exports = {
 			links: {},
 			title: "Dissolution Wave",
 			type: "album",
+			artwork: "cloakroom-dissolution-wave.jpg",
 		},
 		{
 			artist: "Conjurer",
@@ -161,6 +180,7 @@ module.exports = {
 			links: {},
 			title: "Páthos",
 			type: "album",
+			artwork: "conjurer-páthos.jpg",
 		},
 		{
 			artist: "Cookin Soul & Jinsang",
@@ -170,6 +190,7 @@ module.exports = {
 			links: {},
 			title: "Boa Bunda",
 			type: "album",
+			artwork: "cookin-soul-&-jinsang-boa-bunda.jpg",
 		},
 		{
 			artist: "deathcrash",
@@ -179,6 +200,7 @@ module.exports = {
 			links: {},
 			title: "Return",
 			type: "album",
+			artwork: "deathcrash-return.jpg",
 		},
 		{
 			artist: "Denzel Curry",
@@ -188,6 +210,7 @@ module.exports = {
 			links: {},
 			title: "Walkin",
 			type: "single",
+			artwork: "denzel-curry-walkin.jpg",
 		},
 		{
 			artist: "DJ Killa C",
@@ -197,6 +220,7 @@ module.exports = {
 			links: {},
 			title: "Killa III",
 			type: "album",
+			artwork: "dj-killa-c-killa-iii.jpg",
 		},
 		{
 			artist: "Drake & 21 Savage",
@@ -206,6 +230,7 @@ module.exports = {
 			links: {},
 			title: "Her Loss",
 			type: "album",
+			artwork: "drake-21-savage-her-loss.jpg",
 		},
 		{
 			artist: "Duster",
@@ -215,6 +240,7 @@ module.exports = {
 			links: {},
 			title: "Together",
 			type: "album",
+			artwork: "duster-together.jpg",
 		},
 		{
 			artist: "END / Cult Leader",
@@ -224,6 +250,7 @@ module.exports = {
 			links: {},
 			title: "Gather & Mourn",
 			type: "album",
+			artwork: "end-cult-leader-gather-mourn.jpg",
 		},
 		{
 			artist: "Greet Death",
@@ -233,6 +260,7 @@ module.exports = {
 			links: {},
 			title: "New Low",
 			type: "album",
+			artwork: "greet-death-new-low.jpg",
 		},
 		{
 			artist: "Horse Jumper of Love",
@@ -242,6 +270,7 @@ module.exports = {
 			links: {},
 			title: "Natural Part",
 			type: "album",
+			artwork: "horse-jumper-of-love-natural-part.jpg",
 		},
 		{
 			artist: "Ithaca",
@@ -251,6 +280,7 @@ module.exports = {
 			links: {},
 			title: "They Fear Us",
 			type: "album",
+			artwork: "ithaca-they-fear-us.jpg",
 		},
 		{
 			artist: "Jack Ventimiglia",
@@ -260,6 +290,7 @@ module.exports = {
 			links: {},
 			title: "Temporary Days",
 			type: "single",
+			artwork: "jack-ventimiglia-temporary-days.jpg",
 		},
 		{
 			artist: "Jengi",
@@ -269,6 +300,7 @@ module.exports = {
 			links: {},
 			title: "Bel Mercy",
 			type: "single",
+			artwork: "jengi-bel-mercy.jpg",
 		},
 		{
 			artist: "Kelela",
@@ -278,6 +310,7 @@ module.exports = {
 			links: {},
 			title: "Happy Ending",
 			type: "single",
+			artwork: "kelela-happy-ending.jpg",
 		},
 		{
 			artist: "Mizmor & Thou",
@@ -287,6 +320,7 @@ module.exports = {
 			links: {},
 			title: "Myopia",
 			type: "album",
+			artwork: "mizmor-thou-myopia.jpg",
 		},
 		{
 			artist: "Mount Kimbie",
@@ -296,6 +330,7 @@ module.exports = {
 			links: {},
 			title: "MK 3.5: Die Cuts | City Planning",
 			type: "album",
+			artwork: "mount-kimbie-mk-3-5-die-cuts-city-planning.jpg",
 		},
 		{
 			artist: "Neil Young & The Restless",
@@ -305,6 +340,7 @@ module.exports = {
 			links: {},
 			title: "Eldorado (2022 Remaster)",
 			type: "album",
+			artwork: "neil-young-the-restless-eldorado-2022-remaster.jpg",
 		},
 		{
 			artist: "Neil Young",
@@ -314,6 +350,7 @@ module.exports = {
 			links: {},
 			title: "Landing on Water (2022 Remaster)",
 			type: "album",
+			artwork: "neil-young-landing-on-water-2022-remaster.jpg",
 		},
 		{
 			artist: "Neil Young with Crazy Horse",
@@ -323,6 +360,8 @@ module.exports = {
 			links: {},
 			title: "Toast",
 			type: "album",
+			artwork: "neil-young-with-crazy-horse-toast.jpg",
+			animatedArtwork: "neil-young-with-crazy-horse-toast.mp4",
 		},
 		{
 			artist: "Options",
@@ -332,6 +371,7 @@ module.exports = {
 			links: {},
 			title: "Swimming Feeling",
 			type: "album",
+			artwork: "options-swimming-feeling.jpg",
 		},
 		{
 			artist: "Pedro the Lion",
@@ -341,6 +381,7 @@ module.exports = {
 			links: {},
 			title: "Havasu",
 			type: "album",
+			artwork: "pedro-the-lion-havasu.jpg",
 		},
 		{
 			artist: "Phobophilic",
@@ -350,6 +391,7 @@ module.exports = {
 			links: {},
 			title: "Enveloping Absurdity",
 			type: "album",
+			artwork: "phobophilic-enveloping-absurdity.jpg",
 		},
 		{
 			artist: "Pink Floyd",
@@ -359,6 +401,8 @@ module.exports = {
 			links: {},
 			title: "Animals (2018 Remix)",
 			type: "album",
+			artwork: "pink-floyd-animals-2018-remix.jpg",
+			animatedArtwork: "pink-floyd-animals-2018-remix.mp4",
 		},
 		{
 			artist: "Prize Horse",
@@ -368,6 +412,7 @@ module.exports = {
 			links: {},
 			title: "Welder",
 			type: "album",
+			artwork: "prize-horse-welder.jpg",
 		},
 		{
 			artist: "The Smile",
@@ -377,6 +422,8 @@ module.exports = {
 			links: {},
 			title: "A Light for Attracting Attention",
 			type: "album",
+			artwork: "the-smile-a-light-for-attracting-attention.jpg",
+			animatedArtwork: "the-smile-a-light-for-attracting-attention.mp4",
 		},
 		{
 			artist: "The Staves",
@@ -386,6 +433,7 @@ module.exports = {
 			links: {},
 			title: "Be Kind",
 			type: "album",
+			artwork: "the-staves-be-kind.jpg",
 		},
 		{
 			artist: "The Tallest Man on Earth",
@@ -395,6 +443,7 @@ module.exports = {
 			links: {},
 			title: "Too Late for Edelweiss",
 			type: "album",
+			artwork: "the-tallest-man-on-earth-too-late-for-edelweiss.jpg",
 		},
 		{
 			artist: "They Hate Change",
@@ -404,6 +453,7 @@ module.exports = {
 			links: {},
 			title: "Finally, New",
 			type: "album",
+			artwork: "they-hate-change-finally-new.jpg",
 		},
 		{
 			artist: "Tim Heidecker",
@@ -413,6 +463,7 @@ module.exports = {
 			links: {},
 			title: "High School",
 			type: "album",
+			artwork: "tim-heidecker-high-school.jpg",
 		},
 		{
 			artist: "Tzompantli",
@@ -422,6 +473,7 @@ module.exports = {
 			links: {},
 			title: "Tlazcaltiliztli",
 			type: "album",
+			artwork: "tzompantli-tlazcaltiliztli.jpg",
 		},
 		{
 			artist: "Victor Shores",
@@ -431,6 +483,7 @@ module.exports = {
 			links: {},
 			title: "Victor Shores",
 			type: "album",
+			artwork: "victor-shores-victor-shores.jpg",
 		},
 		{
 			artist: "The War on Drugs",
@@ -440,6 +493,7 @@ module.exports = {
 			links: {},
 			title: "I Don't Live Here Anymore",
 			type: "album",
+			artwork: "the-war-on-drugs-i-dont-live-here-anymore.jpg",
 		},
 		{
 			artist: "Willie Nelson",
@@ -449,6 +503,7 @@ module.exports = {
 			links: {},
 			title: "American Rebel",
 			type: "album",
+			artwork: "willie-nelson-american-rebel.jpg",
 		},
 		{
 			artist: "Worm",
@@ -458,6 +513,7 @@ module.exports = {
 			links: {},
 			title: "Bluenothing",
 			type: "album",
+			artwork: "worm-bluenothing.jpg",
 		},
 		{
 			artist: "Wrecking Crew",
@@ -467,6 +523,7 @@ module.exports = {
 			links: {},
 			title: "Sedale Threat",
 			type: "album",
+			artwork: "wrecking-crew-sedale-threat.jpg",
 		},
 	],
 };
