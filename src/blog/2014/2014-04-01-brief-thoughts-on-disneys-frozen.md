@@ -1,0 +1,10 @@
+---
+title: "Brief Thoughts on Disney's Frozen"
+date: 2014-04-01
+tags: [review, movies]
+---
+
+- The plot felt very rushed
+- The characters were uninteresting
+- The dialog was simple
+- The Mickey Mouse cartoon at the beginning was great

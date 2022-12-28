@@ -1,0 +1,42 @@
+---js
+{
+	pagination: {
+		data: "collections.posts",
+		size: 1,
+		alias: "redirect",
+		before: function (data) {
+			return data.reduce((redirects, page) => {
+				// Any of the posts on my blog prior to 2020 used a different URL
+				// structure, so we'll create redirects for just those posts older
+				// than 2020.
+				const year = page.date.getFullYear();
+				if (year <= 2020) {
+					const month = ("0" + (page.date.getMonth() + 1)).slice(-2);
+					const date = page.date.getDate();
+					const legacyUrl = `/${year}/${month}/${date}/${page.fileSlug}.html`;
+
+					redirects.push ({
+						from: legacyUrl,
+						to: page.url,
+					});
+				}
+				return redirects;
+			}, []);
+		},
+		addAllPagesToCollections: false,
+	},
+	permalink: "{{ redirect.from }}",
+	eleventyExcludeFromCollections: true,
+}
+---
+<!DOCTYPE html>
+<html lang="en-US">
+	<meta charset="utf-8">
+	<title>Redirecting&hellip;</title>
+	<link rel="canonical" href="{{ redirect.to | url }}">
+	<script>location="{{ redirect.to | url }}"</script>
+	<meta http-equiv="refresh" content="0; url={{ redirect.to | url }}">
+	<meta name="robots" content="noindex">
+	<h1>Redirecting&hellip;</h1>
+	<a href="{{ redirect.to | url }}">Click here if you are not redirected.</a>
+</html>

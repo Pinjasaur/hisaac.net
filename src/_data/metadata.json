@@ -1,0 +1,11 @@
+{
+	"title": "hisaac.net",
+	"url": "https://hisaac.net/",
+	"language": "en",
+	"description": "The personal website of Isaac Halvorson",
+	"author": {
+		"name": "Isaac Halvorson",
+		"email": "hello@hisaac.net",
+		"url": "https://hisaac.net/about/"
+	}
+}

@@ -1,0 +1,20 @@
+---
+layout: layouts/home.njk
+eleventyNavigation:
+	key: Home
+	order: 1
+---
+
+{% set postslist = collections.posts %}
+{% set postslistCounter = collections.posts | length %}
+{% include "partials/postslist.njk" %}
+
+<p>Blog posts can be found at <a href="/blog/">the /blog/</a>.</p>
+
+{# For debugging: List all of the pages in the project
+<ul>
+	{%- for entry in collections.all %}
+	<li><a href="{{ entry.url }}"><code>{{ entry.url }}</code></a></li>
+	{%- endfor %}
+</ul>
+#}
