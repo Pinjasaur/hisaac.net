@@ -3,6 +3,27 @@ title: "My Favorite Music of 2022"
 tags: [music, best-of]
 ---
 
-<div>
-	{{ albums | debug }}
-</div>
+<style>
+	img, video {
+		display: block;
+		max-width: 640px;
+		width: auto;
+		height: auto;
+	}
+</style>
+
+{% for album in albums %}
+	<div class="album">
+		<h2>Title: {{ album.title }}</h2>
+		<p>Artist: {{ album.artist }}</p>
+		<p>Date: {{ album.date }}</p>
+		<p>Genres: {{ album.genres }}</p>
+		<p>Links: {{ album.links }}</p>
+		<p>Blurbs: {{ album.blurb }}</p>
+	</div>
+	{% if album.animatedArtwork %}
+		{% silentLoopingVideo album.animatedArtwork, album.title %}
+	{% else %}
+		{% image album.artwork, album.title %}
+	{% endif %}
+{% endfor %}

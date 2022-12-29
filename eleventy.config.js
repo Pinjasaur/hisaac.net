@@ -1,21 +1,59 @@
-const path = require("path");
-// https://nodejs.org/api/util.html#util_util_inspect_object_options
+const fs = require("fs");
 const inspect = require("util").inspect;
+const path = require("path");
 
-const { DateTime } = require("luxon");
-
-const Image = require("@11ty/eleventy-img");
+// Official 11ty plugins
+const { EleventyHtmlBasePlugin } = require("@11ty/eleventy");
+const pluginNavigation = require("@11ty/eleventy-navigation");
 const pluginRss = require("@11ty/eleventy-plugin-rss");
 const pluginSyntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
-const pluginNavigation = require("@11ty/eleventy-navigation");
-const { EleventyHtmlBasePlugin } = require("@11ty/eleventy");
+
+// Other node modules
+const { DateTime } = require("luxon");
+const beautify_html = require("js-beautify").html;
 
 module.exports = function (eleventyConfig) {
 	eleventyConfig.ignores.add("README.md");
 
-	// Copy the `img` and `css` folders to the output
+	eleventyConfig.setServerOptions({
+		module: "@11ty/eleventy-server-browsersync",
+	});
+
 	eleventyConfig.setServerPassthroughCopyBehavior("copy");
 	eleventyConfig.addPassthroughCopy({ "src/public/": "/" });
+
+	eleventyConfig.addTransform("htmlPrettify", function (content) {
+		if (!this.page.outputPath || !this.page.outputPath.endsWith(".html")) {
+			return content;
+		}
+
+		return beautify_html(content, {
+			indent_with_tabs: true,
+			end_with_newline: true,
+		});
+	});
+
+	eleventyConfig.addTransform("pageAssets", function (content) {
+		if (!this.page.outputPath || !this.page.outputPath.endsWith(".html")) {
+			return content;
+		}
+
+		const inputDir = path.dirname(this.page.inputPath);
+		const outputDir = path.dirname(this.page.outputPath);
+		const inputAssetsDir = path.join(inputDir, "assets");
+		const outputAssetsDir = path.join(outputDir, "assets");
+
+		if (
+			!fs.existsSync(inputAssetsDir) ||
+			!fs.statSync(inputAssetsDir).isDirectory()
+		) {
+			return content;
+		}
+
+		fs.cpSync(inputAssetsDir, outputAssetsDir, { recursive: true });
+
+		return content;
+	});
 
 	// Add plugins
 	eleventyConfig.addPlugin(pluginRss);
@@ -41,9 +79,7 @@ module.exports = function (eleventyConfig) {
 
 	// https://html.spec.whatwg.org/multipage/common-microsyntaxes.html#valid-date-string
 	eleventyConfig.addFilter("htmlDateString", (dateObj) => {
-		return DateTime.fromJSDate(dateObj, { zone: "utc" }).toFormat(
-			"yyyy-LL-dd"
-		);
+		return DateTime.fromJSDate(dateObj, { zone: "utc" }).toFormat("yyyy-LL-dd");
 	});
 
 	eleventyConfig.addFilter("readableDate", (dateObj) => {
@@ -63,7 +99,13 @@ module.exports = function (eleventyConfig) {
 	});
 
 	eleventyConfig.addShortcode("image", imageShortcode);
-	eleventyConfig.addShortcode("link", linkShortcode);
+	eleventyConfig.addShortcode("video", videoShortcode);
+	eleventyConfig.addShortcode("audio", audioShortcode);
+	eleventyConfig.addShortcode("internalLink", internalLinkShortcode);
+
+	eleventyConfig.addShortcode("silentLoopingVideo", (src, caption) => {
+		return videoShortcode(src, caption, `autoplay loop muted`);
+	});
 
 	return {
 		// Pre-process *.md files with: (default: `liquid`)
@@ -79,50 +121,45 @@ module.exports = function (eleventyConfig) {
 };
 
 function imageShortcode(src, alt, caption) {
-	// Prepends the image src with the full directory inputPath
-	let imageSrc = `${path.dirname(this.page.inputPath)}/${src}`;
-
-	let options = {
-		outputDir: path.dirname(this.page.outputPath),
-		urlPath: this.page.url,
-	};
-
-	if (imageSrc.endsWith(".gif") || imageSrc.endsWith(".webp")) {
-		options.formats = ["webp"];
-		options.sharpOptions = {
-			animated: true,
-			limitInputPixels: false,
-		};
-	}
-
-	Image(imageSrc, options);
-
-	let imageAttributes = {
-		alt,
-		loading: "lazy",
-		decoding: "async",
-	};
-
-	let metadata = Image.statsSync(imageSrc, options);
-	let imageHTML = Image.generateHTML(metadata, imageAttributes);
-
-	if (caption) {
-		return `
-			<figure>
-				${imageHTML}
-				<figcaption>${caption}</figcaption>
-			</figure>
-		`;
-	} else {
-		return `
-			<figure>
-				${imageHTML}
-			</figure>
-		`;
-	}
+	return figure(
+		`<picture>
+			<source srcset="assets/${src}">
+			<img alt="${alt}" src="assets/${src}">
+		</picture>`,
+		caption
+	);
 }
 
-function linkShortcode(collection, fileSlug) {
+function videoShortcode(src, caption, attributes) {
+	return figure(
+		`<video ${attributes}>
+			<source src="assets/${src}">
+			Your browser does not support the video tag.
+		</video>`,
+		caption
+	);
+}
+
+function audioShortcode(src, caption) {
+	return figure(
+		`<audio controls>
+			<source src="assets/${src}">
+			Your browser does not support the audio tag.
+		</audio>`,
+		caption
+	);
+}
+
+function figure(element, caption) {
+	var html = `<figure>${element}`;
+	if (caption) {
+		html += `<figcaption>${caption}</figcaption>`;
+	}
+	html += `</figure>`;
+	return html;
+}
+
+function internalLinkShortcode(fileSlug, collection) {
 	// Validate the inputs
 	if (collection.length < 1) {
 		throw `Collection ${collection} appears to be empty`;

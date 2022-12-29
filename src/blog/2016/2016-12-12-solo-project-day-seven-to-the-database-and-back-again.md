@@ -4,7 +4,7 @@ tags: [twitter, projects, crow, webdev]
 date: 2016-12-12T21:10:56-06:00
 ---
 
-This is technically the eigth day since I began my solo project, but I didn't do any work on the project on Sunday (although I did do [some other web work]({% link collections.posts, "moved-to-digital-ocean-lets-encrypt" %})).
+This is technically the eigth day since I began my solo project, but I didn't do any work on the project on Sunday (although I did do [some other web work]({% internalLink "moved-to-digital-ocean-lets-encrypt", collections.posts %})).
 
 Today was a very productive day for me. I got more done than I expected to, and I made it to MVP (Minimum Viable Product)! I didn't think I'd get to MVP this fast, but I'm glad I did. At Prime, we all get industry mentors to work with, and tomorrow we meet with them to show them our solo projects. I was really hoping I'd have a usable product to show them.
 

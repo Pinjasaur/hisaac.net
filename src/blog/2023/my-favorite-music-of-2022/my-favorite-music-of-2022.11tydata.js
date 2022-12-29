@@ -60,7 +60,7 @@ module.exports = {
 			type: "album",
 			artwork: "big-thief-dragon-new-warm-mountain-i-believe-in-you.png",
 			animatedArtwork:
-				"big-thief-dragon-new-warm-mountain-i-believe-in-you.mp4",
+				"big-thief-dragon-new-warm-mountain-i-believe-in-you.webm",
 		},
 		{
 			artist: "Caroline Polachek",
@@ -100,7 +100,8 @@ module.exports = {
 			links: {},
 			title: "I Tried Catching You But You Fell Through Me",
 			type: "album",
-			artwork: "chained-to-the-bottom-of-the-ocean-i-tried-catching-you-but-you-fell-through-me.jpg",
+			artwork:
+				"chained-to-the-bottom-of-the-ocean-i-tried-catching-you-but-you-fell-through-me.jpg",
 		},
 		{
 			artist: "Chat Pile",
@@ -110,7 +111,7 @@ module.exports = {
 			links: {},
 			title: "God's Country",
 			type: "album",
-			artwork: "chat-pile-god's-country.jpg",
+			artwork: "chat-pile-gods-country.jpg",
 		},
 		{
 			artist: "Chris Staples",
@@ -140,7 +141,7 @@ module.exports = {
 			links: {},
 			title: "I'm a Ram",
 			type: "single",
-			artwork: "chris-stapleton-i'm-a-ram.jpg",
+			artwork: "chris-stapleton-im-a-ram.jpg",
 		},
 		{
 			artist: "Clark",
@@ -180,7 +181,7 @@ module.exports = {
 			links: {},
 			title: "Páthos",
 			type: "album",
-			artwork: "conjurer-páthos.jpg",
+			artwork: "conjurer-pathos.jpg",
 		},
 		{
 			artist: "Cookin Soul & Jinsang",
@@ -190,7 +191,7 @@ module.exports = {
 			links: {},
 			title: "Boa Bunda",
 			type: "album",
-			artwork: "cookin-soul-&-jinsang-boa-bunda.jpg",
+			artwork: "cookin-soul-jinsang-boa-bunda.jpg",
 		},
 		{
 			artist: "deathcrash",
@@ -320,7 +321,7 @@ module.exports = {
 			links: {},
 			title: "Myopia",
 			type: "album",
-			artwork: "mizmor-thou-myopia.jpg",
+			artwork: "mizmor-thou-myopia.png",
 		},
 		{
 			artist: "Mount Kimbie",
@@ -330,7 +331,7 @@ module.exports = {
 			links: {},
 			title: "MK 3.5: Die Cuts | City Planning",
 			type: "album",
-			artwork: "mount-kimbie-mk-3-5-die-cuts-city-planning.jpg",
+			artwork: "mount-kimbie-mk-35-die-cuts-city-planning.jpg",
 		},
 		{
 			artist: "Neil Young & The Restless",
@@ -361,7 +362,7 @@ module.exports = {
 			title: "Toast",
 			type: "album",
 			artwork: "neil-young-with-crazy-horse-toast.jpg",
-			animatedArtwork: "neil-young-with-crazy-horse-toast.mp4",
+			animatedArtwork: "neil-young-with-crazy-horse-toast.webm",
 		},
 		{
 			artist: "Options",
@@ -381,7 +382,7 @@ module.exports = {
 			links: {},
 			title: "Havasu",
 			type: "album",
-			artwork: "pedro-the-lion-havasu.jpg",
+			artwork: "pedro-the-lion-havasu.png",
 		},
 		{
 			artist: "Phobophilic",
@@ -402,7 +403,7 @@ module.exports = {
 			title: "Animals (2018 Remix)",
 			type: "album",
 			artwork: "pink-floyd-animals-2018-remix.jpg",
-			animatedArtwork: "pink-floyd-animals-2018-remix.mp4",
+			animatedArtwork: "pink-floyd-animals-2018-remix.webm",
 		},
 		{
 			artist: "Prize Horse",
@@ -422,8 +423,8 @@ module.exports = {
 			links: {},
 			title: "A Light for Attracting Attention",
 			type: "album",
-			artwork: "the-smile-a-light-for-attracting-attention.jpg",
-			animatedArtwork: "the-smile-a-light-for-attracting-attention.mp4",
+			artwork: "the-smile-a-light-for-attracting-attention.png",
+			animatedArtwork: "the-smile-a-light-for-attracting-attention.webm",
 		},
 		{
 			artist: "The Staves",
@@ -443,7 +444,7 @@ module.exports = {
 			links: {},
 			title: "Too Late for Edelweiss",
 			type: "album",
-			artwork: "the-tallest-man-on-earth-too-late-for-edelweiss.jpg",
+			artwork: "the-tallest-man-on-earth-too-late-for-edelweiss.png",
 		},
 		{
 			artist: "They Hate Change",
