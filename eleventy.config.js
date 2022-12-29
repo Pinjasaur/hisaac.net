@@ -121,10 +121,11 @@ module.exports = function (eleventyConfig) {
 };
 
 function imageShortcode(src, alt, caption) {
+	const encodedURI = encodeURI(src);
 	return figure(`
 		<picture>
-			<source srcset="assets/${src}">
-			<img alt="${alt}" src="assets/${src}">
+			<source srcset="assets/${encodedURI}">
+			<img alt="${alt}" src="assets/${encodedURI}">
 		</picture>`,
 		caption
 	);
