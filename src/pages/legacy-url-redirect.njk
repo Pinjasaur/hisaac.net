@@ -10,22 +10,37 @@
 				// structure, so we'll create redirects for just those posts older
 				// than 2020.
 				const year = page.date.getFullYear();
-				if (year <= 2020) {
-					const month = ("0" + (page.date.getMonth() + 1)).slice(-2);
-					const date = page.date.getDate();
-					const legacyUrl = `/${year}/${month}/${date}/${page.fileSlug}.html`;
+				if (year > 2020) return redirects;
 
-					redirects.push ({
-						from: legacyUrl,
-						to: page.url,
-					});
-				}
+				const month = ("0" + (page.date.getMonth() + 1)).slice(-2);
+				const date = page.date.getDate();
+				var legacyUrl = `/${year}/${month}/${date}/${page.fileSlug}.html`;
+
+				redirects.push ({
+					from: legacyUrl,
+					to: page.url,
+				});
+
 				return redirects;
 			}, []);
 		},
 		addAllPagesToCollections: false,
 	},
-	permalink: "{{ redirect.from }}",
+	permalink: function (data) {
+		// Using a Nunjucks filter to build the permalink replaces some special characters
+		// with their HTML entity equivalents, which I don't want. So I'll just return it
+		// from the data object using JavaScript instead.
+		//
+		// example:
+		//     if fileSlug is my-dead-girlfriend's-bot-joshua-allen.html
+		//     "{{ redirect.from }}" result: /2016/08/31/my-dead-girlfriend&#39;s-bot-joshua-allen.html
+		//     data.redirect.from result: /2016/08/31/my-dead-girlfriend's-bot-joshua-allen.html
+		//
+		// I know having an apostrophe in a URL maybe isn't "correct", but I need to maintain
+		// the URLs from my old blog, and this is how they were built.
+
+		return data.redirect.from;
+	},
 	eleventyExcludeFromCollections: true,
 }
 ---
