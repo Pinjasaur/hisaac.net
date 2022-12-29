@@ -4,7 +4,6 @@ const path = require("path");
 
 // Official 11ty plugins
 const { EleventyHtmlBasePlugin } = require("@11ty/eleventy");
-const EleventyVitePlugin = require("@11ty/eleventy-plugin-vite");
 const pluginNavigation = require("@11ty/eleventy-navigation");
 const pluginRss = require("@11ty/eleventy-plugin-rss");
 const pluginSyntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
@@ -54,7 +53,6 @@ module.exports = function (eleventyConfig) {
 
 	// Add plugins
 	eleventyConfig.addPlugin(EleventyHtmlBasePlugin);
-	eleventyConfig.addPlugin(EleventyVitePlugin);
 	eleventyConfig.addPlugin(pluginNavigation);
 	eleventyConfig.addPlugin(pluginRss);
 	eleventyConfig.addPlugin(pluginSyntaxHighlight);
@@ -105,7 +103,7 @@ module.exports = function (eleventyConfig) {
 		return videoShortcode(
 			album.animatedArtwork,
 			`<cite>${album.title}</cite> by ${album.artist}`,
-			`autoplay loop muted preload"`
+			`autoplay loop muted`
 		);
 	});
 
@@ -113,8 +111,8 @@ module.exports = function (eleventyConfig) {
 		const caption = `<cite>${album.title}</cite> by ${album.artist}`
 		return imageShortcode(
 			album.artwork,
-			`Album artwork for ${caption}`,
-			caption
+			`Album artwork for ${album.title} by ${album.artist}`,
+			`<cite>${album.title}</cite> by ${album.artist}`
 		);
 	});
 
