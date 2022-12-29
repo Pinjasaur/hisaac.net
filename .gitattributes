@@ -3,17 +3,21 @@
 
 # Git LFS Settings
 
+[attr]media filter=lfs diff=lfs merge=lfs -text
+
 ## Images
-*.gif filter=lfs diff=lfs merge=lfs -text
-*.jpeg filter=lfs diff=lfs merge=lfs -text
-*.jpg filter=lfs diff=lfs merge=lfs -text
-*.png filter=lfs diff=lfs merge=lfs -text
+*.gif media
+*.jpeg media
+*.jpg media
+*.png media
+*.webp media
 
 ## Audio
-*.mp3 filter=lfs diff=lfs merge=lfs -text
+*.mp3 media
 
 ## Video
-*.mp4 filter=lfs diff=lfs merge=lfs -text
+*.mp4 media
+*.webm media
 
 ## Documents
-*.pdf filter=lfs diff=lfs merge=lfs -text
+*.pdf media
