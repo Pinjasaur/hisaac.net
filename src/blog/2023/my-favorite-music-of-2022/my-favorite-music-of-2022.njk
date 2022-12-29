@@ -22,8 +22,8 @@ tags: [music, best-of]
 		<p>Blurbs: {{ album.blurb }}</p>
 	</div>
 	{% if album.animatedArtwork %}
-		{% silentLoopingVideo album.animatedArtwork, album.title %}
+		{% animatedArtwork album %}
 	{% else %}
-		{% image album.artwork, album.title %}
+		{% albumArtwork album %}
 	{% endif %}
 {% endfor %}

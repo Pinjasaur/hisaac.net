@@ -4,6 +4,7 @@ const path = require("path");
 
 // Official 11ty plugins
 const { EleventyHtmlBasePlugin } = require("@11ty/eleventy");
+const EleventyVitePlugin = require("@11ty/eleventy-plugin-vite");
 const pluginNavigation = require("@11ty/eleventy-navigation");
 const pluginRss = require("@11ty/eleventy-plugin-rss");
 const pluginSyntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
@@ -14,10 +15,6 @@ const beautify_html = require("js-beautify").html;
 
 module.exports = function (eleventyConfig) {
 	eleventyConfig.ignores.add("README.md");
-
-	eleventyConfig.setServerOptions({
-		module: "@11ty/eleventy-server-browsersync",
-	});
 
 	eleventyConfig.setServerPassthroughCopyBehavior("copy");
 	eleventyConfig.addPassthroughCopy({ "src/public/": "/" });
@@ -56,10 +53,11 @@ module.exports = function (eleventyConfig) {
 	});
 
 	// Add plugins
+	eleventyConfig.addPlugin(EleventyHtmlBasePlugin);
+	eleventyConfig.addPlugin(EleventyVitePlugin);
+	eleventyConfig.addPlugin(pluginNavigation);
 	eleventyConfig.addPlugin(pluginRss);
 	eleventyConfig.addPlugin(pluginSyntaxHighlight);
-	eleventyConfig.addPlugin(pluginNavigation);
-	eleventyConfig.addPlugin(EleventyHtmlBasePlugin);
 
 	// Return the smallest number argument
 	eleventyConfig.addFilter("min", (...numbers) => {
@@ -103,8 +101,21 @@ module.exports = function (eleventyConfig) {
 	eleventyConfig.addShortcode("audio", audioShortcode);
 	eleventyConfig.addShortcode("internalLink", internalLinkShortcode);
 
-	eleventyConfig.addShortcode("silentLoopingVideo", (src, caption) => {
-		return videoShortcode(src, caption, `autoplay loop muted`);
+	eleventyConfig.addShortcode("animatedArtwork", (album) => {
+		return videoShortcode(
+			album.animatedArtwork,
+			`<cite>${album.title}</cite> by ${album.artist}`,
+			`autoplay loop muted preload"`
+		);
+	});
+
+	eleventyConfig.addShortcode("albumArtwork", (album) => {
+		const caption = `<cite>${album.title}</cite> by ${album.artist}`
+		return imageShortcode(
+			album.artwork,
+			`Album artwork for ${caption}`,
+			caption
+		);
 	});
 
 	return {
