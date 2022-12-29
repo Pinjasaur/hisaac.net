@@ -121,8 +121,8 @@ module.exports = function (eleventyConfig) {
 };
 
 function imageShortcode(src, alt, caption) {
-	return figure(
-		`<picture>
+	return figure(`
+		<picture>
 			<source srcset="assets/${src}">
 			<img alt="${alt}" src="assets/${src}">
 		</picture>`,
@@ -131,9 +131,18 @@ function imageShortcode(src, alt, caption) {
 }
 
 function videoShortcode(src, caption, attributes) {
-	return figure(
-		`<video ${attributes}>
-			<source src="assets/${src}">
+	let type = "";
+	if (src.endsWith(".mp4")) {
+		type = "type='video/mp4'";
+	} else if (src.endsWith(".webm")) {
+		type = "type='video/webm' codecs='vp9'";
+	} else if (src.endsWith(".ogg")) {
+		type = "type='video/ogg'";
+	}
+
+	return figure(`
+		<video ${attributes}>
+			<source src="assets/${src}" ${type}>
 			Your browser does not support the video tag.
 		</video>`,
 		caption
@@ -141,8 +150,8 @@ function videoShortcode(src, caption, attributes) {
 }
 
 function audioShortcode(src, caption) {
-	return figure(
-		`<audio controls>
+	return figure(`
+		<audio controls>
 			<source src="assets/${src}">
 			Your browser does not support the audio tag.
 		</audio>`,
