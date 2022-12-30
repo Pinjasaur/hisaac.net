@@ -95,22 +95,11 @@ module.exports = function (eleventyConfig) {
 	});
 
 	eleventyConfig.addShortcode("image", imageShortcode);
-	eleventyConfig.addShortcode("video", videoShortcode);
-	eleventyConfig.addShortcode("audio", audioShortcode);
 	eleventyConfig.addShortcode("internalLink", internalLinkShortcode);
 
-	eleventyConfig.addShortcode("animatedArtwork", (album) => {
-		return videoShortcode(
-			album.animatedArtwork,
-			`<cite>${album.title}</cite> by ${album.artist}`,
-			`autoplay loop muted`
-		);
-	});
-
 	eleventyConfig.addShortcode("albumArtwork", (album) => {
-		const caption = `<cite>${album.title}</cite> by ${album.artist}`
 		return imageShortcode(
-			album.artwork,
+			`assets/${album.artwork}`,
 			`Album artwork for ${album.title} by ${album.artist}`,
 			`<cite>${album.title}</cite> by ${album.artist}`
 		);
@@ -133,38 +122,9 @@ function imageShortcode(src, alt, caption) {
 	const encodedURI = encodeURI(src);
 	return figure(`
 		<picture>
-			<source srcset="assets/${encodedURI}">
-			<img alt="${alt}" src="assets/${encodedURI}">
+			<source srcset="${encodedURI}">
+			<img alt="${alt}" src="${encodedURI}">
 		</picture>`,
-		caption
-	);
-}
-
-function videoShortcode(src, caption, attributes) {
-	let type = "";
-	if (src.endsWith(".mp4")) {
-		type = "type='video/mp4'";
-	} else if (src.endsWith(".webm")) {
-		type = "type='video/webm' codecs='vp9'";
-	} else if (src.endsWith(".ogg")) {
-		type = "type='video/ogg'";
-	}
-
-	return figure(`
-		<video ${attributes}>
-			<source src="assets/${src}" ${type}>
-			Your browser does not support the video tag.
-		</video>`,
-		caption
-	);
-}
-
-function audioShortcode(src, caption) {
-	return figure(`
-		<audio controls>
-			<source src="assets/${src}">
-			Your browser does not support the audio tag.
-		</audio>`,
 		caption
 	);
 }

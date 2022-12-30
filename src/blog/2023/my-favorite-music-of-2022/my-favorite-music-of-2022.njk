@@ -21,9 +21,5 @@ tags: [music, best-of]
 		<p>Links: {{ album.links }}</p>
 		<p>Blurbs: {{ album.blurb }}</p>
 	</div>
-	{% if album.animatedArtwork %}
-		{% animatedArtwork album %}
-	{% else %}
-		{% albumArtwork album %}
-	{% endif %}
+	{% albumArtwork album %}
 {% endfor %}
