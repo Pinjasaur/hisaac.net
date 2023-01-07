@@ -1,0 +1,11 @@
+<header>
+	<h1><a href="/">hisaac.net</a></h1>
+	<nav>
+		<ul>
+			<li><a href="/about/">About</a></li>
+			<li><a href="/blog/">Blog</a></li>
+			<li><a href="/projects/">Projects</a></li>
+			<li><a href="/more/">Contact</a></li>
+		</ul>
+	</nav>
+</header>

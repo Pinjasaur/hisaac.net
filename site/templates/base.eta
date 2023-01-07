@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title><%= it.title %></title>
+	<meta name="description" content="<%= it.description %>">
+</head>
+<body>
+	<%~ includeFile("./partials/header") %>
+	<main>
+		<h1><%= it.title %></h1>
+		<p><%= it.description %></p>
+		<%~ it.content %>
+	</main>
+	<%~ includeFile("./partials/footer") %>
+</body>
+</html>

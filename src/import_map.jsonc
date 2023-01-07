@@ -4,6 +4,6 @@
 		"fs": "https://deno.land/std@0.171.0/fs/mod.ts",
 		"markdown-it": "npm:markdown-it@13.0.1",
 		"slugify": "npm:@sindresorhus/slugify@2.1.1",
-		"nunjucks": "npm:@types/nunjucks@3.2.1"
+		"eta": "https://deno.land/x/eta@v1.12.3/mod.ts"
 	}
 }
