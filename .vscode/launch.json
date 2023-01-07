@@ -1,0 +1,21 @@
+{
+	"version": "0.2.0",
+	"configurations": [
+		{
+			"request": "launch",
+			"name": "Launch Program",
+			"type": "node",
+			"program": "${workspaceFolder}/main.ts",
+			"cwd": "${workspaceFolder}",
+			"runtimeExecutable": "/opt/homebrew/bin/deno",
+			"runtimeArgs": [
+				"run",
+				"--import-map",
+				"src/import_map.json",
+				"--inspect-wait",
+				"--allow-all"
+			],
+			"attachSimplePort": 9229
+		}
+	]
+}
