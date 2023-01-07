@@ -10,8 +10,6 @@
 <body>
 	<%~ includeFile("./partials/header") %>
 	<main>
-		<h1><%= it.title %></h1>
-		<p><%= it.description %></p>
 		<%~ it.content %>
 	</main>
 	<%~ includeFile("./partials/footer") %>

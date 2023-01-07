@@ -3,13 +3,18 @@ import { TextBundle } from "./TextBundle.ts";
 import { parse } from "flags";
 import slugify from "slugify";
 import MarkdownIt from "markdown-it";
-import { walkSync } from "fs";
+import {
+	copySync,
+	emptyDirSync,
+	ensureDirSync,
+	walkSync,
+} from "fs";
 import { renderFile, configure } from "eta";
 
 const parsedArgs = parse(Deno.args);
 
-await Deno.remove("dist", { recursive: true });
-await Deno.mkdir("dist", { recursive: true });
+emptyDirSync("dist");
+ensureDirSync("dist");
 
 // Configure Eta
 configure({
@@ -19,23 +24,37 @@ configure({
 const postsDir = "site/blog";
 const postsWalker = walkSync(postsDir);
 
+ensureDirSync("dist/blog");
 for (const post of postsWalker) {
 	if (post.path.endsWith(".textbundle")) {
-		// postTextBundles.push(TextBundle.fromPath(post.path));
 		const bundle = TextBundle.fromPath(post.path);
 		const postHTML = renderFile("base.eta", {
 			title: bundle.info.title,
 			description: bundle.info.date,
-			content: bundle.text,
+			content: bundle.html,
 		});
 
 		const postSlug = slugify(bundle.info.title);
-		const postPath = `./dist/${postSlug}.html`;
+		const postDir = `./dist/blog/${postSlug}`;
+		ensureDirSync(postDir);
 
-		const postHTMLResolved = await Promise.resolve(postHTML);
-		if (postHTMLResolved) {
-			console.log(`Rendered ${postSlug}.html`);
+		if (postHTML) {
+			const postHTMLResolved = await Promise.resolve(postHTML);
+			const postPath = `${postDir}/index.html`;
 			Deno.writeTextFileSync(postPath, postHTMLResolved);
+			console.log(`Rendered ${postSlug}.html`);
+
+			// Copy assets if they exist
+			try {
+				copySync(`${post.path}/assets`, `${postDir}/assets`);
+			} catch (error) {
+				// Ignore error if there are no assets
+				if (!!error.message.startsWith("No such file or directory (os error 2)") === false) {
+					throw error;
+				}
+			} finally {
+				console.log(`Copied assets for ${postSlug}`);
+			}
 		}
 	}
 }
