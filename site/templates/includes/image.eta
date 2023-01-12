@@ -1,0 +1,9 @@
+<figure>
+	<% if (url) { %>
+	<a href="">
+	<% } %>
+	blahblahblah
+	<% if (url) { %>
+	</a>
+	<% } %>
+</figure>

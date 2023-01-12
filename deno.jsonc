@@ -1,8 +1,8 @@
 {
-	"importMap": "src/import_map.jsonc",
+	"importMap": "generator/import_map.jsonc",
 	"tasks": {
-		"build": "deno run --allow-all src/main.ts",
-		"cache": "deno cache src/main.ts",
-		"dev": "deno run --allow-all --watch src/main.ts"
+		"build": "deno run --allow-all generator/main.ts",
+		"cache": "deno cache generator/main.ts",
+		"dev": "deno run --allow-all --watch=site,generator generator/main.ts"
 	}
 }
